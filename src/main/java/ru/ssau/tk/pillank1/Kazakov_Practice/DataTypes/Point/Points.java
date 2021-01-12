@@ -28,4 +28,12 @@ public class Points {
     public static double length(Point point) {
         return point.length();
     }
+
+    public static Point opposite(Point obj) {
+        return new Point(-obj.x, -obj.y, -obj.z);
+    }
+
+    public static Point inverse(Point obj) {
+        return new Point(1/obj.x, 1/obj.y, 1/obj.z);
+    }
 }
