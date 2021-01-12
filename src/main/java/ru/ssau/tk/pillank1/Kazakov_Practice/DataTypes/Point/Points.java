@@ -20,4 +20,8 @@ public class Points {
     public static Point divide(Point firstObj, Point secondObj) {
         return new Point(firstObj.x / secondObj.x, firstObj.y / secondObj.y, firstObj.z / secondObj.z);
     }
+
+    public static Point enlarge(Point obj, double multiplier) {
+        return new Point(obj.x * multiplier, obj.y * multiplier, obj.z * multiplier);
+    }
 }

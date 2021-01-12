@@ -3,7 +3,7 @@ package ru.ssau.tk.pillank1.Kazakov_Practice.DataTypes.Point;
 public class CreatingPoints_1_4 {
     public static void main(String[] args) {
         Point firstPoint = new Point(15, 8, 22);
-        Point secondPoint = new Point(3, 827.88, -4827.7);
+        Point secondPoint = new Point(3, 4, 11);
         System.out.println("First point: (" + firstPoint.x + ", " + firstPoint.y + ", " + firstPoint.z + ')');
         System.out.println("Second point: (" + secondPoint.x + ", " + secondPoint.y + ", " + secondPoint.z + ')');
         System.out.println("Sum: (" + Points.sum(firstPoint, secondPoint).x + ", " + Points.sum(firstPoint, secondPoint).y + ", " + Points.sum(firstPoint, secondPoint).z + ')');
