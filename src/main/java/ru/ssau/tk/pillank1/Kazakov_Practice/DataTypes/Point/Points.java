@@ -34,7 +34,7 @@ public class Points {
     }
 
     public static Point inverse(Point obj) {
-        return new Point(1/obj.x, 1/obj.y, 1/obj.z);
+        return new Point(1 / obj.x, 1 / obj.y, 1 / obj.z);
     }
 
     public static Point vectorProduct(Point firstObj, Point secondObj) {
