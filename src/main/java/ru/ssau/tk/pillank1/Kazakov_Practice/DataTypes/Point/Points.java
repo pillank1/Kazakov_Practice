@@ -24,4 +24,8 @@ public class Points {
     public static Point enlarge(Point obj, double multiplier) {
         return new Point(obj.x * multiplier, obj.y * multiplier, obj.z * multiplier);
     }
+
+    public static double length(Point point) {
+        return point.length();
+    }
 }
