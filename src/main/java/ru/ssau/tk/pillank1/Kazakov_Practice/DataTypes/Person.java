@@ -4,6 +4,25 @@ public class Person {
     private String firstName, lastName;
     private int passportId;
 
+    public Person() {
+
+    }
+
+    public Person(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public Person(int passportId) {
+        this.passportId = passportId;
+    }
+
+    public Person(String firstName, String lastName, int passportId) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.passportId = passportId;
+    }
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
