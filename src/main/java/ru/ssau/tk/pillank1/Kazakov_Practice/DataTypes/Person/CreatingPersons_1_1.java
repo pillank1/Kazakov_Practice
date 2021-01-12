@@ -1,6 +1,6 @@
-package ru.ssau.tk.pillank1.Kazakov_Practice.DataTypes;
+package ru.ssau.tk.pillank1.Kazakov_Practice.DataTypes.Person;
 
-public class CreatingPerson_1_1 {
+public class CreatingPersons_1_1 {
     public static void main(String[] args) {
         Person firstPerson = new Person();
         Person secondPerson = new Person();

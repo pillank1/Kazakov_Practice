@@ -1,4 +1,4 @@
-package ru.ssau.tk.pillank1.Kazakov_Practice.DataTypes;
+package ru.ssau.tk.pillank1.Kazakov_Practice.DataTypes.Person;
 
 public class Person {
     private String firstName, lastName;
