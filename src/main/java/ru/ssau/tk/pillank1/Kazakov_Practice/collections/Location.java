@@ -1,5 +1,7 @@
 package ru.ssau.tk.pillank1.Kazakov_Practice.collections;
 
+import java.util.Objects;
+
 public class Location {
     private int id;
     private String name;
@@ -38,5 +40,19 @@ public class Location {
 
     public void setLongitude(double longitude) {
         this.longitude = longitude;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) {
+            return true;
+        } else if (object == null || getClass() != object.getClass()) { return false; }
+        Location location = (Location) object;
+        return id == location.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }
