@@ -53,4 +53,17 @@ public class Route implements Iterable<Location> {
             }
         };
     }
+
+    public void remove(Location location) {
+        int index = 0;
+
+        for (Location currentLocation : this.locations) {
+            if (currentLocation.equals(location)) {
+                removeLocation(index);
+                return;
+            }
+
+            index++;
+        }
+    }
 }

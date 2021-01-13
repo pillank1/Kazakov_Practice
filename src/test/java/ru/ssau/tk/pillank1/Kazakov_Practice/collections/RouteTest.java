@@ -14,6 +14,8 @@ public class RouteTest {
     Location location1 = new Location();
     Location location2 = new Location();
     Location location3 = new Location();
+    Location location4 = new Location();
+    Location location5 = new Location();
 
     @Test
     public void testAddAndGetLocation() {
@@ -67,6 +69,53 @@ public class RouteTest {
 
         route.removeLocation(1);
         assertEquals(route.getLocation(), locations3);
+    }
+
+    @Test
+    public void testRemove() {
+        List<Location> locations4 = new ArrayList<>();
+        Route route1 = new Route();
+
+        route1.addIndexLocation(0, location2);
+        route1.addIndexLocation(1, location3);
+        route1.addIndexLocation(2, location1);
+
+        locations4.add(location2);
+        locations4.add(location1);
+
+        route1.remove(location3);
+        assertEquals(route1.getLocation(), locations4);
+
+        List<Location> locations5 = new ArrayList<>();
+        Route route2 = new Route();
+
+        route2.addIndexLocation(0, location1);
+        route2.addIndexLocation(1, location2);
+        route2.addIndexLocation(2, location3);
+        route2.addIndexLocation(3, location4);
+        route2.addIndexLocation(4, location5);
+
+        location1.setId(1);
+        location2.setId(2);
+        location3.setId(3);
+        location4.setId(2);
+        location5.setId(2);
+
+        location2.setName("One");
+        location4.setName("Two");
+        location5.setName("One");
+
+        route2.remove(location5);
+        assertEquals(route2.getLocation(), new ArrayList<>(Arrays.asList(location1, location3, location4, location5)));
+
+        route2.remove(location5);
+        assertEquals(route2.getLocation(), new ArrayList<>(Arrays.asList(location1, location3, location4)));
+
+        route2.remove(location5);
+        assertEquals(route2.getLocation(), new ArrayList<>(Arrays.asList(location1, location3)));
+
+        route2.remove(location2);
+        assertEquals(route2.getLocation(), new ArrayList<>(Arrays.asList(location1, location3)));
     }
 
     @Test
