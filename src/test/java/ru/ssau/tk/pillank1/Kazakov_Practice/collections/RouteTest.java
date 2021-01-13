@@ -1,11 +1,10 @@
 package ru.ssau.tk.pillank1.Kazakov_Practice.collections;
 
 import org.testng.annotations.Test;
+import ru.ssau.tk.pillank1.Kazakov_Practice.dataTypes.person.Person;
+import ru.ssau.tk.pillank1.Kazakov_Practice.dataTypes.point.Point;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 import static org.testng.Assert.*;
 
@@ -135,5 +134,66 @@ public class RouteTest {
             assertEquals(locations.getId(), count++);
         }
         assertEquals(count, 3);
+    }
+
+    @Test
+    public void testEquals() {
+        Route route1 = new Route();
+        Route route2 = new Route();
+        Route route3 = new Route();
+        Route route4 = new Route();
+
+        Location city1 = new Settlement();
+        Location city2 = new Settlement();
+        Location village1 = new Settlement();
+        Location village2 = new Settlement();
+        Location village3 = new Settlement();
+
+        Location warehouse1 = new Waypoint();
+        Location warehouse2 = new Waypoint();
+        Location warehouse3 = new Waypoint();
+        Location warehouse4 = new Waypoint();
+
+        Point point = new Point(1,2,3);
+
+        city1.setId(1);
+        city2.setId(2);
+        village1.setId(3);
+        village2.setId(1);
+        village3.setId(2);
+        warehouse1.setId(4);
+        warehouse2.setId(2);
+        warehouse3.setId(3);
+        warehouse4.setId(3);
+
+        route1.addLocation(village2);
+        route1.addLocation(city2);
+        route1.addLocation(warehouse3);
+        route1.addLocation(warehouse1);
+
+        route2.addLocation(city1);
+        route2.addLocation(village3);
+        route2.addLocation(warehouse4);
+        route2.addLocation(warehouse1);
+
+        route3.addLocation(village2);
+        route3.addLocation(warehouse1);
+        route3.addLocation(warehouse2);
+        route3.addLocation(warehouse3);
+
+        route4.addLocation(village2);
+        route4.addLocation(warehouse2);
+        route4.addLocation(village2);
+
+        assertTrue(route1.equals(route2));
+        assertFalse(route1.equals(route3));
+        assertFalse(route1.equals(route4));
+        assertFalse(route1.equals(point));
+
+        route3.addIndexLocation(1, village3);
+        route3.remove(warehouse2);
+        route3.remove(warehouse3);
+        route3.addIndexLocation(2, warehouse4);
+        assertTrue(route1.equals(route3));
     }
 }
