@@ -1,4 +1,4 @@
-package ru.ssau.tk.pillank1.Kazakov_Practice.DataTypes.Point;
+package ru.ssau.tk.pillank1.Kazakov_Practice.DataTypes.point;
 
 public class Point {
     public final double x, y, z;

@@ -1,4 +1,4 @@
-package ru.ssau.tk.pillank1.Kazakov_Practice.DataTypes.Person;
+package ru.ssau.tk.pillank1.Kazakov_Practice.DataTypes.person;
 
 import org.testng.annotations.Test;
 

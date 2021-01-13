@@ -1,4 +1,4 @@
-package ru.ssau.tk.pillank1.Kazakov_Practice.DataTypes.Point;
+package ru.ssau.tk.pillank1.Kazakov_Practice.DataTypes.point;
 
 public class CreatingPoints_1_4 {
     public static void main(String[] args) {
