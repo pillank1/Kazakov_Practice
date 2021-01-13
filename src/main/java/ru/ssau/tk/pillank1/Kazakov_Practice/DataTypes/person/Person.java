@@ -3,9 +3,14 @@ package ru.ssau.tk.pillank1.Kazakov_Practice.DataTypes.person;
 public class Person {
     private String firstName, lastName;
     private int passportId;
+    private Gender gender;
 
     public Person() {
 
+    }
+
+    public Person(Gender gender) {
+        this.gender = gender;
     }
 
     public Person(String firstName, String lastName) {
@@ -21,6 +26,13 @@ public class Person {
         this.firstName = firstName;
         this.lastName = lastName;
         this.passportId = passportId;
+    }
+
+    public Person(String firstName, String lastName, int passportId, Gender gender) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.passportId = passportId;
+        this.gender = gender;
     }
 
     public void setFirstName(String firstName) {
@@ -45,5 +57,13 @@ public class Person {
 
     public int getPassportId() {
         return passportId;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
     }
 }

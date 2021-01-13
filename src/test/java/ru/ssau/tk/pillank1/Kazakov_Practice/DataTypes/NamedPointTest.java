@@ -1,6 +1,7 @@
 package ru.ssau.tk.pillank1.Kazakov_Practice.DataTypes;
 
 import org.testng.annotations.Test;
+import ru.ssau.tk.pillank1.Kazakov_Practice.DataTypes.point.NamedPoint;
 
 import static org.testng.Assert.*;
 
