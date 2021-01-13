@@ -11,8 +11,8 @@ import static org.testng.Assert.*;
 
 public class RouteTest {
     List<Location> locations = new ArrayList<>();
-    Location location1 = new Waypoint();
-    Location location2 = new Settlement();
+    Location location1 = new Location();
+    Location location2 = new Location();
     Location location3 = new Location();
 
     @Test
