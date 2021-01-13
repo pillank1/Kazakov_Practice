@@ -2,8 +2,8 @@ package ru.ssau.tk.pillank1.Kazakov_Practice.collections;
 
 import java.util.*;
 
-public class Route implements Iterable<Location> {
-    private ArrayList<Location> locations = new ArrayList<>();
+public final class Route implements Iterable<Location> {
+    private final ArrayList<Location> locations = new ArrayList<>();
 
     public ArrayList<Location> getLocation() {
         return locations;
