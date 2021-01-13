@@ -1,4 +1,4 @@
-package ru.ssau.tk.pillank1.Kazakov_Practice.DataTypes;
+package ru.ssau.tk.pillank1.Kazakov_Practice.DataTypes.point;
 
 import org.testng.annotations.Test;
 import ru.ssau.tk.pillank1.Kazakov_Practice.DataTypes.point.NamedPoint;
@@ -25,5 +25,11 @@ public class NamedPointTest {
         assertEquals(unnamedPoint.getName(), "Fourth");
         assertEquals(namedPoint.getName(), "Fifth");
         assertEquals(emptyPoint.getName(), "Sixth");
+    }
+
+    @Test
+    public void testReset() {
+        emptyPoint.reset();
+        assertEquals(emptyPoint.getName(), "Absent");
     }
 }
