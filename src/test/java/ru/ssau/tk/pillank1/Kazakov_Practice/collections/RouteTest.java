@@ -9,7 +9,6 @@ import java.util.*;
 import static org.testng.Assert.*;
 
 public class RouteTest {
-    List<Location> locations = new ArrayList<>();
     Location location1 = new Location();
     Location location2 = new Location();
     Location location3 = new Location();
@@ -195,5 +194,44 @@ public class RouteTest {
         route3.remove(warehouse3);
         route3.addIndexLocation(2, warehouse4);
         assertTrue(route1.equals(route3));
+    }
+
+    @Test
+    public void testToString() {
+        Route route = new Route();
+
+        Settlement city = new Settlement();
+        Settlement village = new Settlement();
+        Waypoint depot = new Waypoint();
+        Waypoint warehouse = new Waypoint();
+
+        city.setType(SettlementType.CITY);
+        village.setType(SettlementType.VILLAGE);
+        depot.setType(WaypointType.DEPOT);
+        warehouse.setType(WaypointType.WAREHOUSE);
+
+        city.setName("Toglyatti");
+        village.setName("Sovety");
+        depot.setName("Vokzal");
+        warehouse.setName("Angar");
+
+        city.setLatitude(35.43);
+        village.setLatitude(32.69);
+        depot.setLatitude(58.48);
+        warehouse.setLatitude(65.41);
+
+        city.setLongitude(65.09);
+        village.setLongitude(67.95);
+        depot.setLongitude(88.46);
+        warehouse.setLongitude(13.84);
+
+        route.addLocation(city);
+        route.addLocation(village);
+        route.addLocation(depot);
+        route.addLocation(warehouse);
+        assertEquals(route.toString(), "Settlement: Type: CITY; Name: Toglyatti; Latitude: 35.43; Longitude: 65.09.\n" +
+                "Settlement: Type: VILLAGE; Name: Sovety; Latitude: 32.69; Longitude: 67.95.\n" +
+                "Waypoint: Type: DEPOT; Name: Vokzal; Latitude: 58.48; Longitude: 88.46.\n" +
+                "Waypoint: Type: WAREHOUSE; Name: Angar; Latitude: 65.41; Longitude: 13.84.\n");
     }
 }
