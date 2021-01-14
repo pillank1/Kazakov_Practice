@@ -1,6 +1,8 @@
 package ru.ssau.tk.pillank1.Kazakov_Practice.dataTypes.person;
 
-public class Person {
+import java.io.Serializable;
+
+public class Person implements Serializable {
     private String firstName, lastName;
     private int passportId;
     private Gender gender;
