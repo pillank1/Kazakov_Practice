@@ -1,6 +1,6 @@
 package ru.ssau.tk.pillank1.Kazakov_Practice.arrays;
 
-public class GenerationOfMassive {
+public class GenerationOfMassiveOfUnits {
     public int[] setSize(int size) {
         int[] massive = new int[size];
 

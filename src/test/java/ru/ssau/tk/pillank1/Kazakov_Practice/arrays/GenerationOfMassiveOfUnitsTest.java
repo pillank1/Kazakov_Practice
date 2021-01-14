@@ -4,11 +4,11 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
 
-public class GenerationOfMassiveTest {
+public class GenerationOfMassiveOfUnitsTest {
 
     @Test
     public void testGetIndex() {
-        int[] array = new GenerationOfMassive().setSize(10);
+        int[] array = new GenerationOfMassiveOfUnits().setSize(10);
 
         assertEquals(array.length,10);
 
