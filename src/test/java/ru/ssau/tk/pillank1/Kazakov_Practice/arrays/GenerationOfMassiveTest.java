@@ -8,8 +8,10 @@ public class GenerationOfMassiveTest {
 
     @Test
     public void testGetIndex() {
-        int[] array = new GenerationOfMassive().getIndex(10);
+        int[] array = new GenerationOfMassive().setSize(10);
+
         assertEquals(array.length,10);
+
         assertEquals(array[0],2);
         assertEquals(array[9],2);
         assertEquals(array[6],1);
