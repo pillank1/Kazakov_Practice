@@ -72,4 +72,3 @@ public class Person {
         return firstName + (firstName.isEmpty() || lastName.isEmpty() ? "" : " ") + lastName;
     }
 }
-
