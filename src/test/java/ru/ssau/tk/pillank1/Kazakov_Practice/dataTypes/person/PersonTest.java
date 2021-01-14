@@ -86,4 +86,18 @@ public class PersonTest {
         assertEquals(woman.getGender(), Gender.FEMALE);
         assertEquals(man.getGender(), Gender.MALE);
     }
+
+    @Test
+    public void testToString() {
+        Person person1 = new Person("Egor", "Aushev", 894242);
+        Person person2 = new Person("Anastasia", "Ausheva", 877463);
+
+        assertEquals(person1.toString(), "Egor Aushev");
+        assertEquals(person2.toString(), "Anastasia Ausheva");
+        person2.setLastName("");
+        assertEquals(person2.toString(), "Anastasia");
+        person1.setFirstName("");
+        person1.setLastName("");
+        assertEquals(person1.toString(), "");
+    }
 }
