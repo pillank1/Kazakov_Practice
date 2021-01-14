@@ -9,6 +9,7 @@ public class CalculatingAQuadraticEquationTest {
     @Test
     public void testResults() {
         CalculatingAQuadraticEquation equation = new CalculatingAQuadraticEquation();
+
         assertEquals(equation.getRadicals(1, -2, 1), new double[]{1});
         assertEquals(equation.getRadicals(5, 20, 20), new double[]{-2});
         assertEquals(equation.getRadicals(2, 4, 0), new double[]{-2, 0});
