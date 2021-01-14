@@ -5,23 +5,23 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
 
-public class StringWithMassiveOfStingsTest {
+public class StringWithMassiveOfStringsTest {
     @Test
     public void testNthSymbols() {
         String[] str = {"Road", "to", "the", "dream"};
 
-        assertEquals(StringWithMassiveOfStings.nthSymbols(str, 1), new String[]{"o", "o", "h", "r"});
+        assertEquals(StringWithMassiveOfStrings.nthSymbols(str, 1), new String[]{"o", "o", "h", "r"});
 
         Assert.assertThrows(StringIndexOutOfBoundsException.class,
-                () -> assertEquals(StringWithMassiveOfStings.nthSymbols(str, 2),
+                () -> assertEquals(StringWithMassiveOfStrings.nthSymbols(str, 2),
                         new String[]{"a", "", "e", "e"}));
 
         Assert.assertThrows(NullPointerException.class,
-                () -> assertNull(StringWithMassiveOfStings.nthSymbols(null, 0)));
+                () -> assertNull(StringWithMassiveOfStrings.nthSymbols(null, 0)));
 
         String[] str1 = {null, "null"};
 
         Assert.assertThrows(NullPointerException.class,
-                () -> assertNull(StringWithMassiveOfStings.nthSymbols(str1, 0)));
+                () -> assertNull(StringWithMassiveOfStrings.nthSymbols(str1, 0)));
     }
 }

@@ -1,6 +1,6 @@
 package ru.ssau.tk.pillank1.Kazakov_Practice.exceptions;
 
-public class StringWithMassiveOfStings {
+public class StringWithMassiveOfStrings {
     public static String[] nthSymbols(String[] str, int n) {
         String[] newStr = new String[str.length];
 
