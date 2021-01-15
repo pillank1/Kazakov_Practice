@@ -4,11 +4,11 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
 
-public class Task_3_8Test {
+public class Task_3_9Test {
 
     @Test
     public void testGetIndexStr() {
-        assertEquals(Task_3_8.getIndexStr("Kazakov", "Kaz"), -1);
-        assertEquals(Task_3_8.getIndexStr("Kazakova", "va"),6);
+        assertEquals(Task_3_9.getIndexStr("Kazakov", "Kaz"), 0);
+        assertEquals(Task_3_9.getIndexStr("Kazakova", "va"),-1);
     }
 }
