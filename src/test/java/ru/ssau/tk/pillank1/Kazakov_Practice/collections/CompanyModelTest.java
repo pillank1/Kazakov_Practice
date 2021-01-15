@@ -361,4 +361,18 @@ public class CompanyModelTest {
         CompanyModel.sort(settlements, new EquatorComparator());
         assertEquals(settlements, new ArrayList<>(Arrays.asList(village1, village2, city1, city2)));
     }
+
+    @Test
+    public void testDriversComparator() {
+        CompanyModel companyModelOne = new CompanyModel();
+        CompanyModel companyModelTwo = new CompanyModel();
+
+        fillModels(companyModelOne, companyModelTwo);
+
+        List<Driver> drivers = new ArrayList<>(Arrays.asList(driver1, driver2, driver4, driver5, driver3, driver7, driver6));
+
+        drivers.sort(new DriversComparator());
+
+        assertEquals(drivers, new ArrayList<>(Arrays.asList(driver2, driver6, driver3, driver1, driver5, driver7, driver4)));
+    }
 }
