@@ -375,4 +375,21 @@ public class CompanyModelTest {
 
         assertEquals(drivers, new ArrayList<>(Arrays.asList(driver2, driver6, driver3, driver1, driver5, driver7, driver4)));
     }
+
+    @Test
+    public void testGetSettlementTypeMap() {
+        CompanyModel companyModelOne = new CompanyModel();
+        CompanyModel companyModelTwo = new CompanyModel();
+
+        fillModels(companyModelOne, companyModelTwo);
+
+        Map<Settlement, SettlementType> settlementTypeMap = companyModelOne.getSettlementTypeMap();
+
+        Collection<Settlement> settlements = settlementTypeMap.keySet();
+        Collection<SettlementType> settlementTypes = settlementTypeMap.values();
+
+        assertEquals(settlements, new ArrayList<>(Arrays.asList(city1, city2, village1, village2)));
+        assertEquals(settlementTypes, new ArrayList<>(Arrays.asList(SettlementType.CITY, SettlementType.CITY,
+                SettlementType.VILLAGE, SettlementType.VILLAGE)));
+    }
 }

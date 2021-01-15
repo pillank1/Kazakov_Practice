@@ -97,4 +97,27 @@ public class CompanyModel {
     public static void sort(List<Settlement> settlements, Comparator<? super Settlement> comparator) {
         settlements.sort(comparator);
     }
+
+    public Map<Settlement, SettlementType> getSettlementTypeMap() {
+        Map<Settlement, SettlementType> settlementTypeMap = new LinkedHashMap<>();
+        List<Settlement> settlementList = new ArrayList<>();
+
+        for (Location location : this.allLocations) {
+            if (location.getClass() == Settlement.class) {
+                settlementList.add((Settlement) location);
+            }
+        }
+
+        settlementList.sort(((o1, o2) -> Integer.compare(-o1.getSettlement(), -o2.getSettlement())));
+
+        for (Settlement settlement : settlementList) {
+            if (settlement.getType() == SettlementType.CITY) {
+                settlementTypeMap.put(settlement, SettlementType.CITY);
+            } else {
+                settlementTypeMap.put(settlement, SettlementType.VILLAGE);
+            }
+        }
+        
+        return settlementTypeMap;
+    }
 }
