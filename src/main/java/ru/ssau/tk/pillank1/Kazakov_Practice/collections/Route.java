@@ -2,7 +2,7 @@ package ru.ssau.tk.pillank1.Kazakov_Practice.collections;
 
 import java.util.*;
 
-public final class Route implements Iterable<Location> {
+public final class Route implements Iterable<Location>, Comparable<Route> {
     private final ArrayList<Location> locations = new ArrayList<>();
 
     public ArrayList<Location> getLocation() {
@@ -118,5 +118,10 @@ public final class Route implements Iterable<Location> {
             length += Math.sqrt(Math.pow(x2-x1, 2) + Math.pow(y2-y1, 2));
         }
         return length;
+    }
+
+    @Override
+    public int compareTo(Route anotherRoute) {
+        return Double.compare(this.length(), anotherRoute.length());
     }
 }
