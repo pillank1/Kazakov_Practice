@@ -327,10 +327,38 @@ public class CompanyModelTest {
 
         List<Location> locations = new ArrayList<>(Arrays.asList(village1, village2, city1, city2, waypoint1,
                 waypoint2, waypoint3, waypoint4, waypoint5));
+
         assertEquals(Collections.max(locations), city2);
         assertEquals(Collections.min(locations), village1);
+
         Collections.sort(locations);
+
         assertEquals(locations, new ArrayList<>(Arrays.asList(village1, waypoint1, waypoint2, village2,
                 city1, waypoint3, waypoint5, city2, waypoint4)));
+    }
+
+    @Test
+    public void testSort() {
+        CompanyModel companyModelOne = new CompanyModel();
+        CompanyModel companyModelTwo = new CompanyModel();
+
+        fillModels(companyModelOne, companyModelTwo);
+
+        List<Settlement> settlements = new ArrayList<>(Arrays.asList(city1, village2, city2, village1));
+
+        CompanyModel.sort(settlements, (o1, o2) -> Integer.compare(o1.getId(), o2.getId()));
+        assertEquals(settlements, new ArrayList<>(Arrays.asList(village1, village2, city1, city2)));
+
+        CompanyModel.sort(settlements, (o1, o2) -> Integer.compare(o1.getSettlement(), o2.getSettlement()));
+        assertEquals(settlements, new ArrayList<>(Arrays.asList(village2, village1, city2, city1)));
+
+        CompanyModel.sort(settlements, (o1, o2) -> Double.compare(o1.getLatitude(), o2.getLatitude()));
+        assertEquals(settlements, new ArrayList<>(Arrays.asList(village1, village2, city1, city2)));
+
+        CompanyModel.sort(settlements, (o1, o2) -> Double.compare(o1.getLongitude(), o2.getLongitude()));
+        assertEquals(settlements, new ArrayList<>(Arrays.asList(village1, village2, city2, city1)));
+
+        CompanyModel.sort(settlements, new EquatorComparator());
+        assertEquals(settlements, new ArrayList<>(Arrays.asList(village1, village2, city1, city2)));
     }
 }
