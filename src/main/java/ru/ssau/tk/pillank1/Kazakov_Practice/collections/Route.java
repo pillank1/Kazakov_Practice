@@ -122,6 +122,6 @@ public final class Route implements Iterable<Location>, Comparable<Route> {
 
     @Override
     public int compareTo(Route anotherRoute) {
-        return Double.compare(this.length(), anotherRoute.length());
+        return RouteLengthComparator.compare(this, anotherRoute);
     }
 }
